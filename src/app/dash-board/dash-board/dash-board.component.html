@@ -1,0 +1,27 @@
+
+<md-sidenav-container class="example-container" >
+  <md-sidenav #sidenav class="example-sidenav">
+    <md-card>
+      <md-card-header>
+        <div md-card-avatar class="example-header-image" style="width: 100px;height: 100px"></div>
+        <md-card-title>
+          Yonatan Ziv
+        </md-card-title>
+        <md-card-subtitle>
+          Developer
+        </md-card-subtitle>
+      </md-card-header>
+    </md-card>
+    <div class="example-button-row">
+      <md-grid-list cols="1" rowHeight="40px">
+        <md-grid-tile><a md-raised-button routerLink="" class="stretch" (click)="sidenav.toggle()">Home</a></md-grid-tile>
+        <md-grid-tile><a md-raised-button routerLink="profile" class="stretch" (click)="sidenav.toggle()">Profile</a></md-grid-tile>
+        <md-grid-tile><a md-raised-button routerLink="store" class="stretch" (click)="sidenav.toggle()">Store</a></md-grid-tile>
+      </md-grid-list>
+    </div>
+  </md-sidenav>
+  <div class="example-sidenav-content" >
+    <button md-mini-fab (click)="sidenav.toggle()" style="position: fixed ; top : 90vh ; left : 10px"><md-icon> ... </md-icon></button>
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>

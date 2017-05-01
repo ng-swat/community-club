@@ -1,0 +1,10 @@
+md-grid-tile.borders{
+  border:solid;
+  border-color: lightgray;
+}
+
+span.stDialog{
+  margin:20px;
+  font: message-box;
+  color:white
+}

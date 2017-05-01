@@ -1,0 +1,26 @@
+<!--<div *ngFor="let card of Cards">-->
+  <md-grid-list cols="3" rowHeight="1:2">
+    <md-grid-tile *ngFor="let card of Cards">
+      <md-card class="example-card">
+        <md-card-header>
+          <div md-card-avatar [style.background-image]="'url(' + card.logo + ')'"  class="example-header-image"></div>
+          <md-card-title>{{card.title}}</md-card-title>
+          <md-card-subtitle>{{card.balance}} Points</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src={{card.image}}>
+        <md-card-content>
+          <p>
+            {{card.text}}
+          </p>
+        </md-card-content>
+        <md-card-actions>
+          <button md-button>BUY</button>
+          <!--<button md-button>SAVE</button>-->
+          <button md-button (click)="openDialog(card)">Details</button>
+          <!--You chose: {{selectedOption}}-->
+        </md-card-actions>
+      </md-card>
+    </md-grid-tile>
+  </md-grid-list>
+<!--</div>-->
+

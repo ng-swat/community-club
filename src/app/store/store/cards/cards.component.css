@@ -1,0 +1,8 @@
+.example-card {
+  width: 200px;
+  margin:20px;
+}
+
+.example-header-image {
+  background-size: cover;
+}
