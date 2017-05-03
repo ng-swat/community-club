@@ -1,0 +1,30 @@
+img.roundUp{
+  border-radius : 50%;
+  width: 250px;
+  height: 250px;
+  box-shadow: 4px 4px 2px #888888;
+  opacity: 1;
+}
+
+img.roundUp:hover{
+  opacity: 0.9;
+}
+
+span{
+  font:message-box;
+}
+
+md-grid-tile.borders{
+  /*border:solid;*/
+  /*border-color: lightgray;*/
+}
+
+stStretch{
+  width:100%;
+}
+
+
+textarea.stExpand{
+  width: 819px;
+  height: 222px;
+}

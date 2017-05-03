@@ -13,6 +13,7 @@
 
 .example-sidenav {
   padding: 0px;
+  background-color: #393939;
 }
 .example-header-image {
   background-image: url('https://scontent.ftlv1-1.fna.fbcdn.net/v/t1.0-9/13895111_10205121212668670_4075659053528365697_n.jpg?oh=408bdb23bf87b22d3b6b222f70cb483c&oe=599553B4');
@@ -22,7 +23,9 @@
   width: 400px;
 }
 
-
+md-card.mat-card{
+  background-color:rgb(34, 34, 34);
+}
 .example-button-row {
   /*display: flex;*/
   /*align-items: center;*/
@@ -31,4 +34,11 @@
 
 a.stretch{
   width: 230px;
+  background-color:#393939;
+  color: white;
 }
+
+a.stretch:hover{
+  background-color:#7d7d7d;
+}
+

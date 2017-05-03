@@ -1,6 +1,5 @@
 import {MdDialogRef} from '@angular/material';
 export class CardInfo {
-
   title: string;
   balance: number;
   image: string;
