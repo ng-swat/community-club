@@ -3,8 +3,10 @@ import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MdButtonModule, MdCardModule,
-  MdCheckboxModule, MdDialogModule, MdGridListModule, MdInputModule, MdSidenavModule, MdSliderModule,
-  MdSlideToggleModule, MdTabsModule
+  MdCheckboxModule, MdDialogModule, MdGridListModule, MdIcon, MdIconModule, MdInputModule, MdListModule, MdMenuModule,
+  MdSidenavModule,
+  MdSliderModule,
+  MdSlideToggleModule, MdTabsModule, MdToolbarModule
 } from '@angular/material';
 import 'hammerjs';
 
@@ -22,7 +24,12 @@ import 'hammerjs';
     MdButtonModule,
     MdGridListModule,
     MdTabsModule,
-    MdDialogModule
+    MdDialogModule,
+    MdGridListModule,
+    MdListModule,
+    MdToolbarModule,
+    MdIconModule,
+    MdMenuModule
   ],
   exports: [
     MdCheckboxModule,
@@ -35,7 +42,12 @@ import 'hammerjs';
     MdButtonModule,
     MdGridListModule,
     MdTabsModule,
-    MdDialogModule
+    MdDialogModule,
+    MdGridListModule,
+    MdListModule,
+    MdToolbarModule,
+    MdIconModule,
+    MdMenuModule
   ],
   declarations: []
 })

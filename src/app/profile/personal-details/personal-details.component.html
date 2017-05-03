@@ -1,0 +1,70 @@
+<form [formGroup]="profileForm" (ngSubmit)="SaveProfile()">
+  <div class="container">
+    <h1 class="title">Profile</h1>
+    <hr>
+    <md-divider></md-divider>
+
+    <md-grid-list cols="4" rowHeight="300px">
+      <md-grid-tile
+        [colspan]="2"
+        [rowspan]="1"
+        class="borders">
+        <img
+          src="https://scontent.ftlv1-1.fna.fbcdn.net/v/t1.0-9/13895111_10205121212668670_4075659053528365697_n.jpg?oh=408bdb23bf87b22d3b6b222f70cb483c&oe=599553B4"
+          class="roundUp"/>
+      </md-grid-tile>
+
+      <md-grid-tile
+        [colspan]="2"
+        [rowspan]="1"
+        class="borders">
+
+
+        <table>
+          <tr>
+            <td>
+              <span>Email : </span>
+            </td>
+            <td>
+              <span>{{Email}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td><br/><br/></td>
+          </tr>
+          <tr>
+            <td>
+              <md-input-container class="stStretch">
+                <input mdInput placeholder="First Name" formControlName="firstName">
+              </md-input-container>
+            </td>
+            <td>
+              <md-input-container class="stStretch">
+                <input mdInput placeholder="Last Name" value="Ziv">
+              </md-input-container>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <md-checkbox>Use my picture to promote the event.</md-checkbox>
+            </td>
+          </tr>
+        </table>
+      </md-grid-tile>
+
+      <md-grid-tile
+        [colspan]="4"
+        [rowspan]="1"
+        class="borders">
+        <md-input-container class="example-full-width">
+        <textarea class="stExpand" mdInput placeholder="Biography">Yoni Ziv is CEO and Chief Software Engineer at Construx Software where he writes books and articles, teaches classes, and oversees Construx’s software engineering practices.
+
+Steve is the author of Code Complete (1993, 2004) and Rapid Development (1996), both winners of Software Development magazine's Jolt award for outstanding software development books of their respective years. In 1998, he published Software Project Survival Guide, in 2004 he published Professional Software Development (2004), and in 2006 he published Software Estimation: Demystifying the Black Art. Steve blogs on professional topics at 10x Software Development and also has a personal blog.
+
+Steve has worked in the desktop software industry since 1984 and has expertise in rapid development methodologies, project estimation, software construction practices, performance tuning, system integration, and third-party contract management.</textarea>
+        </md-input-container>
+      </md-grid-tile>
+    </md-grid-list>
+  </div>
+</form>

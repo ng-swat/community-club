@@ -1,27 +1,54 @@
 
 <md-sidenav-container class="example-container" >
-  <md-sidenav #sidenav class="example-sidenav">
-    <md-card>
-      <md-card-header>
-        <div md-card-avatar class="example-header-image" style="width: 100px;height: 100px"></div>
-        <md-card-title>
+  <md-sidenav mode="side" opened="true" disableClose="true" #sidenav class="example-sidenav">
+    <md-card >
+      <md-card-header >
+        <div md-card-avatar class="example-header-image" style="width: 100px;height: 100px;"></div>
+        <md-card-title style="color:white">
           Yonatan Ziv
         </md-card-title>
-        <md-card-subtitle>
+        <md-card-subtitle style="color:lightgray">
           Developer
         </md-card-subtitle>
       </md-card-header>
     </md-card>
     <div class="example-button-row">
       <md-grid-list cols="1" rowHeight="40px">
-        <md-grid-tile><a md-raised-button routerLink="" class="stretch" (click)="sidenav.toggle()">Home</a></md-grid-tile>
-        <md-grid-tile><a md-raised-button routerLink="profile" class="stretch" (click)="sidenav.toggle()">Profile</a></md-grid-tile>
-        <md-grid-tile><a md-raised-button routerLink="store" class="stretch" (click)="sidenav.toggle()">Store</a></md-grid-tile>
+        <md-grid-tile><a md-raised-button routerLink="" class="stretch" ><md-icon>home</md-icon>   Home</a></md-grid-tile>
+        <md-grid-tile><a md-raised-button routerLink="profile" class="stretch" ><md-icon>face</md-icon>   Profile</a></md-grid-tile>
+        <md-grid-tile><a md-raised-button routerLink="store" class="stretch" ><md-icon>store</md-icon>   Store</a></md-grid-tile>
       </md-grid-list>
     </div>
   </md-sidenav>
-  <div class="example-sidenav-content" >
-    <button md-mini-fab (click)="sidenav.toggle()" style="position: fixed ; top : 90vh ; left : 10px"><md-icon> ... </md-icon></button>
-    <router-outlet></router-outlet>
+  <md-toolbar style="position:fixed;top:0;background:#b71515;color:white">
+    <span>Welcome! You have : 500 points</span>
+    <span style="flex: 1 1 auto;"></span>
+
+
+    <button md-icon-button [mdMenuTriggerFor]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+    <md-menu #menu="mdMenu">
+      <button md-menu-item>
+        <md-icon>thumb_up</md-icon>
+        <span>Like us</span>
+      </button>
+      <button md-menu-item>
+        <md-icon>feedback</md-icon>
+        <span>Feedback</span>
+      </button>
+      <button md-menu-item>
+        <md-icon>power_settings_new</md-icon>
+        <span>Sign out</span>
+      </button>
+    </md-menu>
+
+  </md-toolbar>
+  <div class="example-sidenav-content">
+
+    <div class="" style="position: absolute; top:64px; margin:0px ;padding : 0; width: 99%; height: 89%">
+      <router-outlet></router-outlet>
+    </div>
+    <!--<button md-mini-fab (click)="sidenav.toggle()" style="position: fixed ; top : 90vh ; left : 10px"><md-icon> ... </md-icon></button>-->
   </div>
 </md-sidenav-container>

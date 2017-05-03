@@ -4,13 +4,15 @@ import { DashBoardComponent } from './dash-board/dash-board.component';
 import {ProfileModule} from '../profile/profile.module';
 import {StoreModule} from '../store/store.module';
 import {RouterModule} from '@angular/router';
+import {HomeModule} from '../home/home.module';
 
 @NgModule({
   imports: [
     MaterialUtilModule,
     ProfileModule,
     StoreModule,
-    RouterModule
+    RouterModule,
+    HomeModule
   ],
   declarations: [DashBoardComponent],
   exports: [DashBoardComponent]
