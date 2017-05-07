@@ -1,5 +1,6 @@
 
-<md-sidenav-container class="example-container" >
+<md-sidenav-container class="example-container" *ngIf="(user | async).secureGroup == 'USER' " >
+  <!--<div *ngIf="(user | async).secureGroup == 'USER' ">-->
   <md-sidenav mode="side" opened="true" disableClose="true" #sidenav class="example-sidenav">
     <md-card >
       <md-card-header >
@@ -44,8 +45,8 @@
     </md-menu>
 
   </md-toolbar>
+  <!--</div>-->
   <div class="example-sidenav-content">
-
     <div class="" style="position: absolute; top:64px; margin:0px ;padding : 0; width: 99%; height: 89%">
       <router-outlet></router-outlet>
     </div>

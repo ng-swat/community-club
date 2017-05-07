@@ -1,0 +1,23 @@
+<div *ngIf="(user | async).secureGroup == null">
+
+  <h1>Login</h1>
+
+  <h2 *ngIf="(user | async).pending">Pending...</h2>
+
+  <h2 *ngIf="user | async">{{ user | async | json }}</h2>
+
+  <form [formGroup]="loginForm"
+        (ngSubmit)="auth.login(loginForm.value)">
+    <input type="text"
+           placeholder="email"
+           formControlName="email">
+    <input type="password"
+           placeholder="password"
+           formControlName="password">
+    <button type="submit">submit</button>
+  </form>
+</div>
+
+<div>
+  <app-dash-board *ngIf="(user | async).secureGroup == 'USER' "></app-dash-board>
+</div>

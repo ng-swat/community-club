@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {select} from "@angular-redux/store";
+// import {Actions} from "../../auth/actions.service";
+// import {select} from "@angular-redux/store";
 
 @Component({
   selector: 'app-dash-board',
@@ -7,8 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashBoardComponent implements OnInit {
 
+  @select('user') public user;
+
   constructor() {
   }
+
+  //
+  // auth: Actions;
+  // @select('user') public user;
+  //
+  // constructor(auth: Actions) {
+  //   this.auth = auth;
+  // }
 
   ngOnInit() {
   }
