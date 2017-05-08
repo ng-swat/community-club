@@ -1,13 +1,18 @@
-import {LOGIN, LOGIN_SUCCESS} from './actions.service';
+import {LOGIN, LOGIN_SUCCESS, LOGOUT} from './actions.service';
 export function authReducer(state = {}, action) {
 
   switch (action.type) {
     case LOGIN: {
-      console.log('We are now in the reducer. We chose LOGIN and we set Pending to true.')
+      console.log('We are now in the reducer. We chose LOGIN and we set Pending to true.');
       return Object.assign({}, state, {pending: true});
     }
     case LOGIN_SUCCESS:
+    {
+      console.log('Were in the reducer, at LOGIN_SUCCESS');
       return Object.assign({}, state, {user: action.payload, pending: false, secureGroup: 'USER'});
+    }
+    case LOGOUT:
+      return Object.assign({}, state, {user: null, secureGroup: null, pending: false});
 
     default:
     {

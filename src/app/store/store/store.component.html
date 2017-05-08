@@ -1,5 +1,5 @@
 <!--<md-tab-group style="top:0px; position : absolute ; width: 90vw ; left: 10vw ">-->
-<md-tab-group style="height: 100%;">
+<md-tab-group style="height: 100%;" *ngIf="(user | async).secureGroup == 'USER'" >
   <md-tab label="Shop">
     <app-cards></app-cards>
   </md-tab>

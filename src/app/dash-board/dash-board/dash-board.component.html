@@ -1,7 +1,7 @@
 
-<md-sidenav-container class="example-container" *ngIf="(user | async).secureGroup == 'USER' " >
+<md-sidenav-container class="example-container">
   <!--<div *ngIf="(user | async).secureGroup == 'USER' ">-->
-  <md-sidenav mode="side" opened="true" disableClose="true" #sidenav class="example-sidenav">
+  <md-sidenav mode="side" opened="true" disableClose="true" #sidenav class="example-sidenav" *ngIf="(user | async).secureGroup == 'USER' ">
     <md-card >
       <md-card-header >
         <div md-card-avatar class="example-header-image" style="width: 100px;height: 100px;"></div>
@@ -21,7 +21,7 @@
       </md-grid-list>
     </div>
   </md-sidenav>
-  <md-toolbar style="position:fixed;top:0;background:#b71515;color:white">
+  <md-toolbar style="position:fixed;top:0;background:#b71515;color:white" *ngIf="(user | async).secureGroup == 'USER' ">
     <span>Welcome! You have : 500 points</span>
     <span style="flex: 1 1 auto;"></span>
 
@@ -38,18 +38,18 @@
         <md-icon>feedback</md-icon>
         <span>Feedback</span>
       </button>
-      <button md-menu-item>
+      <button md-menu-item (click)="auth.logout()" routerLink="login">
         <md-icon>power_settings_new</md-icon>
         <span>Sign out</span>
       </button>
     </md-menu>
 
-  </md-toolbar>
+  </md-toolbar >
   <!--</div>-->
   <div class="example-sidenav-content">
     <div class="" style="position: absolute; top:64px; margin:0px ;padding : 0; width: 99%; height: 89%">
       <router-outlet></router-outlet>
     </div>
-    <!--<button md-mini-fab (click)="sidenav.toggle()" style="position: fixed ; top : 90vh ; left : 10px"><md-icon> ... </md-icon></button>-->
   </div>
 </md-sidenav-container>
+

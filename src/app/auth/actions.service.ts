@@ -4,7 +4,7 @@ import {AppState} from '../app.state';
 
 export const LOGIN = 'LOGIN';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
-
+export const LOGOUT = 'LOGOUT';
 
 @Injectable()
 export class Actions {
@@ -14,10 +14,16 @@ export class Actions {
   }
 
   login(userValue) {
-    console.log('We are now at Action service, login method. Dispatching...')
+    console.log('We are now at Action service, login method. Dispatching...');
     this.store.dispatch({
       type: LOGIN,
       payload: userValue
+    });
+  }
+
+  logout() {
+    this.store.dispatch({
+      type: LOGOUT
     });
   }
 

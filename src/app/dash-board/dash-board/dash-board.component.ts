@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {select} from "@angular-redux/store";
+import {select} from '@angular-redux/store';
+import {Actions} from '../../auth/actions.service';
 // import {Actions} from "../../auth/actions.service";
 // import {select} from "@angular-redux/store";
 
@@ -11,8 +12,9 @@ import {select} from "@angular-redux/store";
 export class DashBoardComponent implements OnInit {
 
   @select('user') public user;
-
-  constructor() {
+  public auth: Actions;
+  constructor(auth: Actions) {
+    this.auth = auth;
   }
 
   //

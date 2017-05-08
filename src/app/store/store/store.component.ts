@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {select} from '@angular-redux/store';
 
 @Component({
   selector: 'app-store',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoreComponent implements OnInit {
 
-  constructor() { }
+  @select('user') public user;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

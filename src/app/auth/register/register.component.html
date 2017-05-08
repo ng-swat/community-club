@@ -1,0 +1,75 @@
+<div *ngIf="(user | async).secureGroup == null" style="left: 30%; top: 50%; position: relative">
+  <div *ngIf="!(user | async).pending">
+    <!--<md-grid-list cols="1" rowHeight="1:1">-->
+    <!--<md-grid-tile [colspan]="1" [rowspan]="1">-->
+    <md-card style="width: 35%; height: 50%;">
+      <md-card-header>
+        <md-card-title>
+          <h1>
+            Register
+          </h1>
+        </md-card-title>
+        <md-card-subtitle>
+          Please enter your Email and Password.
+        </md-card-subtitle>
+      </md-card-header>
+      <md-card-actions>
+        <form [formGroup]="registerForm"
+              (ngSubmit)="auth.login(registerForm.value)">
+          <md-grid-list cols="2" rowHeight="120px">
+            <md-grid-tile [colspan]="2" [rowspan]="2">
+              <table>
+                <tr>
+                  <td>
+                    <md-input-container>
+                      <input mdInput placeholder="Name" value="" formControlName="name" align="right">
+                    </md-input-container>
+                  </td>
+                  <td></td>
+                  <td>
+                    <md-input-container>
+                      <input mdInput placeholder="Surname" value="" formControlName="surname">
+                    </md-input-container>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td colspan="3">
+                    <md-input-container>
+                      <input mdInput placeholder="Email" value="" formControlName="email" class="make-longer">
+                    </md-input-container>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td colspan="3">
+                    <md-input-container>
+                    <input mdInput placeholder="Password" value="" formControlName="password" class="make-longer" type="password">
+                  </md-input-container>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td colspan="3">
+                    <md-checkbox formControlName="accepted"> I accept the Terms of use and Privacy policy</md-checkbox>
+                  </td>
+                </tr>
+              </table>
+
+            </md-grid-tile>
+            <!--<md-grid-tile [colspan]="1" [rowspan]="1">-->
+             <!---->
+            <!--</md-grid-tile>-->
+          </md-grid-list>
+          <md-grid-list cols="1" rowHeight="100px">
+            <md-grid-tile [colspan]="1" [rowspan]="1">
+              <button md-raised-button type="submit">Create Account</button>
+            </md-grid-tile>
+          </md-grid-list>
+        </form>
+      </md-card-actions>
+    </md-card>
+    <!--</md-grid-tile>-->
+    <!--</md-grid-list>-->
+  </div>
+</div>
