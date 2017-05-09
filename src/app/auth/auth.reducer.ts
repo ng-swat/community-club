@@ -4,7 +4,7 @@ export function authReducer(state = {}, action) {
   switch (action.type) {
     case LOGIN: {
       console.log('We are now in the reducer. We chose LOGIN and we set Pending to true.');
-      return Object.assign({}, state, {pending: true});
+      return Object.assign({}, state, {pending: true, user: action.payload});
     }
     case LOGIN_SUCCESS:
     {

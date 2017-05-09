@@ -6,9 +6,10 @@ import {StoreModule} from '../store/store.module';
 import {RouterModule} from '@angular/router';
 import {HomeModule} from '../home/home.module';
 // import {AuthModule} from "../auth/auth.module";
-import {ReactiveFormsModule} from "@angular/forms";
-import {NgReduxModule} from "@angular-redux/store";
-import {BrowserModule} from "@angular/platform-browser";
+import {ReactiveFormsModule} from '@angular/forms';
+import {NgReduxModule} from '@angular-redux/store';
+import {BrowserModule} from '@angular/platform-browser';
+import {AdminModule} from '../admin/admin.module';
 // import {AuthComponent} from "../auth/auth/auth.component";
 
 @NgModule({
@@ -20,7 +21,8 @@ import {BrowserModule} from "@angular/platform-browser";
     RouterModule,
     HomeModule,
     ReactiveFormsModule,
-    NgReduxModule
+    NgReduxModule,
+    AdminModule
   ],
   declarations: [DashBoardComponent],
   exports: [DashBoardComponent]

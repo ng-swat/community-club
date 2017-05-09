@@ -12,9 +12,12 @@ import {Actions} from '../../auth/actions.service';
 export class DashBoardComponent implements OnInit {
 
   @select('user') public user;
+
   public auth: Actions;
   constructor(auth: Actions) {
     this.auth = auth;
+    this.user.name = 'Yonatan';
+
   }
 
   //
