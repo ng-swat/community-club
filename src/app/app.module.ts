@@ -12,12 +12,17 @@ import {authReducer} from 'app/auth/auth.reducer';
 import {NgRedux} from '@angular-redux/store';
 import {authMdl} from './Middleware/middleware';
 import {AuthModule} from './auth/auth.module';
+import {initialState} from './app.state';
+import {adminReducer} from './admin/admin.reducer';
+// import {logger} from "codelyzer/util/logger";
+import logger from 'redux-logger';
 // import { UsersComponent } from './app/admin/admin/users/users.component';
 // import {AuthModule} from './auth/auth.module';
 
 
 const rootReducer = combineReducers({
-  user: authReducer
+  user: authReducer,
+  adminData: adminReducer
 });
 
 @NgModule({
@@ -42,6 +47,6 @@ const rootReducer = combineReducers({
 export class AppModule {
 
   constructor(ngRedux: NgRedux<any>) {
-    ngRedux.configureStore(rootReducer, {}, [authMdl]);
+    ngRedux.configureStore(rootReducer, initialState, [authMdl, logger]);
   }
 }

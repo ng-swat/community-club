@@ -18,6 +18,7 @@ export class DashBoardComponent implements OnInit {
     this.auth = auth;
     this.user.name = 'Yonatan';
 
+
   }
 
   //

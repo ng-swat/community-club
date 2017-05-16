@@ -10,5 +10,7 @@ export interface User {
     agreement: boolean;
     biography: string;
     purchases: CardInfo[];
+    pending: boolean;
+    secureGroup: string;
 
 }

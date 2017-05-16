@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Users} from '../../../DAL/Users';
 import {User} from '../../../profile/personal-details/user.interface';
+import {select} from '@angular-redux/store/lib/src';
+import {AdminActionsService} from '../../admin-actions.service';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-users',
@@ -9,46 +11,54 @@ import {User} from '../../../profile/personal-details/user.interface';
 })
 export class UsersComponent implements OnInit {
 
-  public users = Users;
-  public filteredUsers = Users;
-  public filterBucket: User[];
+
+  @select(['adminData', 'users'])
+  public users;
+  public updateUser: FormGroup;
   public selectedUser: User;
   public displayDialog: boolean;
   public searchTxt: string;
+  public actions: AdminActionsService;
+  public tableVisible = true;
 
-  constructor() {
-    // this.displayDialog = true;
+  constructor(actions: AdminActionsService, private builder: FormBuilder) {
+    this.actions = actions;
     this.searchTxt = '';
+    this.updateUser = builder.group({
+      firstName: null,
+      lastName: null,
+      email: null,
+      phone: null,
+      balance: null
+    });
   }
 
   selectUser(user: User) {
     this.selectedUser = user;
+    this.updateUser = this.builder.group({
+      firstName: [this.selectedUser.firstName],
+      lastName: [this.selectedUser.lastName],
+      email: [this.selectedUser.email],
+      phone: [this.selectedUser.phone],
+      balance: [this.selectedUser.balance]
+    });
     this.displayDialog = true;
+  }
+
+  refreshTable(): void {
+    this.displayDialog = false;
+    this.tableVisible = false;
+    setTimeout(() => this.tableVisible = true, 0);
   }
 
   onDialogHide() {
     this.selectedUser = null;
   }
 
-  filterList() {
-    if (this.searchTxt === '') {
-      this.filteredUsers = this.users;
-    } else {
-      this.filteredUsers = this.users.filter((user) => {
-        return user.firstName.toUpperCase().includes(this.searchTxt.toUpperCase()) ;
-      });
-      // this.filterBucket = [];
-      // for (const user of this.users) {
-      //   if (user.firstName.toUpperCase().indexOf(this.searchTxt.toUpperCase()) !== -1) {
-      //     this.filterBucket.push(user);
-      //   }
-      // }
-      // this.filteredUsers = this.filterBucket;
-    }
-  }
 
   ngOnInit() {
 
   }
+
 
 }

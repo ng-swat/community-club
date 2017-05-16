@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MdDialog, MdDialogRef} from '@angular/material';
 import {CardDialogComponent} from '../card-dialog/card-dialog.component';
 import {CardInfo} from 'app/store/store/cards/card-info';
-import {Cards} from '../../../DAL/Cards';
+import {Cards} from '../../../MOCK/Cards';
 
 @Component({
   selector: 'app-cards',
