@@ -4,6 +4,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MdButtonModule, MdCardModule,
   MdCheckboxModule, MdDialogModule, MdGridListModule, MdIcon, MdIconModule, MdInputModule, MdListModule, MdMenuModule,
+  MdProgressSpinnerModule,
   MdSidenavModule,
   MdSliderModule,
   MdSlideToggleModule, MdTabsModule, MdToolbarModule
@@ -29,7 +30,8 @@ import 'hammerjs';
     MdListModule,
     MdToolbarModule,
     MdIconModule,
-    MdMenuModule
+    MdMenuModule,
+    MdProgressSpinnerModule
   ],
   exports: [
     MdCheckboxModule,
@@ -47,7 +49,8 @@ import 'hammerjs';
     MdListModule,
     MdToolbarModule,
     MdIconModule,
-    MdMenuModule
+    MdMenuModule,
+    MdProgressSpinnerModule
   ],
   declarations: []
 })

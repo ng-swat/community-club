@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {select} from '@angular-redux/store';
 
 @Component({
   selector: 'app-profile',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+
+  @select('user') public user;
 
   constructor() { }
 

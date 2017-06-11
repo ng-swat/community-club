@@ -1,0 +1,47 @@
+
+
+<div *ngIf="(user | async).secureGroup == null" style="left: 30%; top: 50%; position: relative">
+  <div *ngIf="!(user | async).pending">
+    <!--<md-grid-list cols="1" rowHeight="1:1">-->
+      <!--<md-grid-tile [colspan]="1" [rowspan]="1">-->
+        <md-card style="width: 30%; height: 30%;">
+          <md-card-header>
+            <md-card-title>
+              <h1>
+                Sign in
+              </h1>
+            </md-card-title>
+            <md-card-subtitle>
+              Please enter your Email and Password.
+            </md-card-subtitle>
+          </md-card-header>
+          <md-card-actions>
+            <form [formGroup]="loginForm"
+                  (ngSubmit)="auth.login(loginForm.value)">
+              <md-grid-list cols="2" rowHeight="1:1">
+                <md-grid-tile [colspan]="1" [rowspan]="1">
+                  <md-input-container>
+                    <input mdInput placeholder="Email" value="" formControlName="email">
+                  </md-input-container>
+                </md-grid-tile>
+                <md-grid-tile [colspan]="1" [rowspan]="1">
+                  <md-input-container>
+                    <input mdInput placeholder="Password" value="" formControlName="password">
+                  </md-input-container>
+                </md-grid-tile>
+              </md-grid-list>
+              <md-grid-list cols="2" rowHeight="2:1">
+                <md-grid-tile [colspan]="1" [rowspan]="1">
+                  <button md-button type="submit">Sign in</button>
+                </md-grid-tile>
+                <md-grid-tile [colspan]="1" [rowspan]="1">
+                  <a md-button routerLink="../register" >Register</a>
+                </md-grid-tile>
+              </md-grid-list>
+            </form>
+          </md-card-actions>
+        </md-card>
+  </div>
+</div>
+
+    <md-spinner style="left: 50%; top: 300px; position: relative" *ngIf="(user | async).pending"></md-spinner>

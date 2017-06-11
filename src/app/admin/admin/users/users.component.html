@@ -1,0 +1,78 @@
+
+<div>
+<div class="fa fa-search" style="position: fixed; top: 10px; left:20px"> <input type="text"  pInputText [(ngModel)]="searchTxt"/></div>
+
+  <p-dataList [value]="users | async | userFilter: searchTxt" [paginator]="true" [rows]="5" *ngIf="tableVisible">
+  <p-header>
+    List of Users
+  </p-header>
+  <ng-template let-user pTemplate="item">
+    <div class="ui-grid ui-grid-responsive ui-fluid" style="font-size:16px;padding:20px;border-bottom:1px solid #D5D5D5;">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-3" style="text-align:center"><i class="fa fa-search" (click)="selectUser(user)" style="cursor:pointer;float:left;margin-top:40px"></i><img [src]="user.image" style="width: 100px;height: 100px; border-radius: 50%"></div>
+        <div class="ui-grid-col-9">
+          <div class="ui-grid ui-grid-responsive ui-fluid">
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-2">First Name: </div>
+              <div class="ui-grid-col-10">{{user.firstName}}</div>
+            </div>
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-2">Last Name: </div>
+              <div class="ui-grid-col-10">{{user.lastName}}</div>
+            </div>
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-2">Email: </div>
+              <div class="ui-grid-col-10">{{user.email}}</div>
+            </div>
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-2">Phone: </div>
+              <div class="ui-grid-col-10">{{user.phone}}</div>
+            </div>
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-2">Balance: </div>
+              <div class="ui-grid-col-10">{{user.balance}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-dataList>
+
+  <p-dialog header="User Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="false" width="400" height="400" [style]="{top:'0px'}" (onAfterHide)="onDialogHide()" appendTo="body" >
+  <form [formGroup]="updateUser" (ngSubmit)="actions.update(updateUser.value,selectedUser)">
+    <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="selectedUser" style="font-size:16px;text-align:center;padding:20px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-12" style="text-align:center"><img [src]="selectedUser.image" style="width: 100px;height: 100px; border-radius: 50%"></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-6">First Name: </div>
+        <input pInputText class="ui-grid-col-6" formControlName="firstName">
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-6">Last Name: </div>
+        <input pInputText class="ui-grid-col-6"  formControlName="lastName">
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-6">Email: </div>
+        <input pInputText class="ui-grid-col-6"  formControlName="email">
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-6">Phone: </div>
+        <input pInputText class="ui-grid-col-6"  formControlName="phone">
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-6">Balance: </div>
+        <input pInputText class="ui-grid-col-6" formControlName="balance" >
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-12"><br/> </div>
+      </div>
+      <div class="ui-grid-row">
+        <button pButton type="button"  label="Save" type="submit" (click)="refreshTable()" ui-button-text class="ui-grid-col-6 ui-button-success"></button>
+        <button pButton type="button"  (click)="actions.delete(selectedUser) ; refreshTable()" label="Delete" class="ui-grid-col-6 ui-button-danger"></button>
+      </div>
+    </div>
+  </form>
+  </p-dialog>
+</div>

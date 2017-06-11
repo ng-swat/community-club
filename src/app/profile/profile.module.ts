@@ -8,6 +8,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {PrimeNGUtilModule} from '../prime-ngutil/prime-ngutil.module';
 import { LogComponent } from './log/log.component';
 import { LogTableComponent } from './log/log-table/log-table.component';
+import {BrowserModule} from '@angular/platform-browser';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { LogTableComponent } from './log/log-table/log-table.component';
     MaterialUtilModule,
     RouterModule.forRoot(stRouter),
     ReactiveFormsModule,
-    PrimeNGUtilModule
+    PrimeNGUtilModule,
+    BrowserModule
   ],
   declarations: [ProfileComponent, PersonalDetailsComponent, LogComponent, LogTableComponent],
   exports: [ProfileComponent]

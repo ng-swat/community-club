@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {ButtonModule, ChartModule, CheckboxModule, DataTableModule, ToggleButtonModule} from 'primeng/primeng';
+import {
+  ButtonModule, ChartModule, CheckboxModule, DataGridModule, DataListModule, DataTableModule, DialogModule,
+  ToggleButtonModule
+} from 'primeng/primeng';
 
 @NgModule({
   imports: [
@@ -9,7 +12,11 @@ import {ButtonModule, ChartModule, CheckboxModule, DataTableModule, ToggleButton
     ButtonModule,
     ToggleButtonModule,
     ChartModule,
-    DataTableModule
+    DataTableModule,
+    DataGridModule,
+    DataListModule,
+    DialogModule
+
   ],
   declarations: [],
   exports: [
@@ -17,7 +24,10 @@ import {ButtonModule, ChartModule, CheckboxModule, DataTableModule, ToggleButton
     ButtonModule,
     ToggleButtonModule,
     ChartModule,
-    DataTableModule
+    DataTableModule,
+    DataGridModule,
+    DataListModule,
+    DialogModule
   ]
 })
 export class PrimeNGUtilModule { }
